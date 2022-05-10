@@ -44,8 +44,38 @@ From the ransom letter, we see a cryptic note about someone threatening to sign 
 
 ![93b795b318ec39dc1b60e22e0e9b1c93](https://user-images.githubusercontent.com/74334127/167705712-72ada725-3691-4980-b6fd-69dbf17ac075.png)
 
-I could have used [GHunt](https://github.com/mxrch/GHunt) to get the exact email, but from the Turing Test challenge I assumed the email was in the same format as `jack.sdctf@gmail.com`. After sending `amy.sdctf@gmail.com` an email demanding the flag, we get a response giving it to us.
+I could have used [GHunt](https://github.com/mxrch/GHunt) to get the exact email, but from the Turing Test challenge I assumed the email was in the same format as `jack.sdctf@gmail.com` and confirmed this on [epieos](https://epieos.com/). After sending `amy.sdctf@gmail.com` an email demanding the flag, we get a response giving it to us.
 
 ![41f867a2d21f2a3628ff968ec2f93ffa](https://user-images.githubusercontent.com/74334127/167705729-d12f196c-59f3-4e8b-8630-9a28f21cb555.png)
 
 flag: `sdctf{0p3n_S0uRCE_1S_aMaz1NG}`
+
+## Samuel
+Difficulty: **Medium**  
+Authors: `k3v1n`  
+Points: **88**
+Solves: **160**
+
+Challenge Description:  
+Where is this?
+https://www.youtube.com/watch?v=fDGVF1fK1cA
+
+Flag format: sdctf{latitude,longitude} using decimal degrees and 3 decimal places rounded toward zero (Ex. 4.1239 → 4.123, -4.0009 → -4.000)
+
+Example: If the location were https://goo.gl/maps/TnhzfxXKg9TDYDfR9 the flag would be sdctf{38.889,-77.035}  
+**Note**  
+The youtube channel/account is not relevant to this challenge. Only the video content is relevant.
+
+### Approach  
+The video linked shows us a blinking beacon at night, with a plane flying by in the distance. I initially thought this was an [Aviation OSINT](https://www.osintessentials.com/aviation) since the plane in the background was the only other thing in the video. I had no idea how to use the beacon or distant plane.
+
+As the competition progressed, I saw that the challenge had a lot of solves and I figured it likely wasn’t some insanely hard Aviation OSINT. I then realized the blinking beacon was likely morse code. `.-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... -` translated to **WHAT HATH GOD WROUGHT**. After googling what that means, we learn it was [the official first Morse code message transmitted in the US](https://en.wikipedia.org/wiki/What_hath_God_wrought#:~:text=%22What%20hath%20God%20wrought%22%20is,the%20Baltimore%E2%80%93Washington%20telegraph%20line).
+
+I thought then the location may be where the message was originally transferred or received, but couldn’t find anything there. I then just searched “What hath god wrought” on google maps and found a sculpture at the University of California San Diego. Seeing that the competition is hosted by San Diego State University, I assumed this was the right spot. From this we can get the coordinates on [google maps](https://www.google.com/maps/place/What+Hath+God+Wrought/@32.8751745,-117.2408527,21z/data=!4m5!3m4!1s0x80dc07e0d30e81a7:0x69087278617d6b1d!8m2!3d32.8752134!4d-117.2407749) in the url, and truncating 32.8751745,-117.2408527 to get the flag..
+
+![79a5590b9250425ef5d4ed03405ba657](https://user-images.githubusercontent.com/74334127/167709182-cbae98ae-76ed-4d13-adad-22767cca5c78.png)
+
+flag: `sdctf{32.875,-117.240}`
+
+
+
