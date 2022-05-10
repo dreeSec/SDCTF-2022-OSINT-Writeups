@@ -71,11 +71,52 @@ The video linked shows us a blinking beacon at night, with a plane flying by in 
 
 As the competition progressed, I saw that the challenge had a lot of solves and I figured it likely wasn’t some insanely hard Aviation OSINT. I then realized the blinking beacon was likely morse code. `.-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... -` translated to **WHAT HATH GOD WROUGHT**. After googling what that means, we learn it was [the official first Morse code message transmitted in the US](https://en.wikipedia.org/wiki/What_hath_God_wrought#:~:text=%22What%20hath%20God%20wrought%22%20is,the%20Baltimore%E2%80%93Washington%20telegraph%20line).
 
-I thought then the location may be where the message was originally transferred or received, but couldn’t find anything there. I then just searched “What hath god wrought” on google maps and found a sculpture at the University of California San Diego. Seeing that the competition is hosted by San Diego State University, I assumed this was the right spot. From this we can get the coordinates on [google maps](https://www.google.com/maps/place/What+Hath+God+Wrought/@32.8751745,-117.2408527,21z/data=!4m5!3m4!1s0x80dc07e0d30e81a7:0x69087278617d6b1d!8m2!3d32.8752134!4d-117.2407749) in the url, and truncating 32.8751745,-117.2408527 to get the flag..
+I thought then the location may be where the message was originally transferred or received, but couldn’t find anything there. I then just searched “What hath god wrought” on Google Maps and found a sculpture at the University of California San Diego. Seeing that the competition is hosted by San Diego State University, I assumed this was the right spot. From this we can get the coordinates on [Google Maps](https://www.google.com/maps/place/What+Hath+God+Wrought/@32.8751745,-117.2408527,21z/data=!4m5!3m4!1s0x80dc07e0d30e81a7:0x69087278617d6b1d!8m2!3d32.8752134!4d-117.2407749) in the url, and truncating 32.8751745,-117.2408527 to get the flag..
 
 ![79a5590b9250425ef5d4ed03405ba657](https://user-images.githubusercontent.com/74334127/167709182-cbae98ae-76ed-4d13-adad-22767cca5c78.png)
 
 flag: `sdctf{32.875,-117.240}`
 
+## Turing Test
+Difficulty: **Medium**  
+Authors: `Blarthogg, KNOXDEV`  
+Points: **49**
+Solves: **200**
 
+Challenge Description:  
+My friend has been locked out of his account! Can you help him recover it?  
+**Email**  
+jack.sdctf@gmail.com  
+**Website**  
+https://vault.sdc.tf/  
+**Note**  
+Twitter does not need to be used for this challenge.
+
+### Approach  
+My first step in this challenge was going to the website, and started spamming random passwords to see what would happen. After 5 incorrect guesses, an `Account Support` window is prompted. We are then asked security questions to get back into our account (as well as bread puns).
+
+![a78305e4a4cdec015b7de26dda34d0db](https://user-images.githubusercontent.com/74334127/167715998-a643e9f5-04c0-4e82-994f-9584db96c296.png)
+
+For the first prompt, we are asked our name. We can use [epieos](https://epieos.com/) on Jack’s email to find his name is Jack Banner.
+
+![7c8f47781693d3d5c2decfb0ea295254](https://user-images.githubusercontent.com/74334127/167716017-b7624b46-47e1-47d8-8db4-534ca35f1844.png)
+
+Next we are prompted with “What month were you born in?” I wasn't sure if you were supposed to brute force this but figured since it was an OSINT challenge thre would be a social media account. Epieos showed Jack’s email as being connected to a Twitter, but luckily the challenge admin noticed this as well and added a disclaimer that twitter does not need to be used. What could have happened is someone else registered an account with that email, which admins have to be prepared to fix for these kinds of challenges. I tried other social media platforms, and specifically ones that I did not explore yet. OSINT categories usually try to avoid using the same platform twice. Looking up “Jack Banner” on Facebook, we see [the account](https://www.facebook.com/profile.php?id=100077609021228) we are looking for.
+
+![81adfedda8cb78d2a9b906fe1116eca0](https://user-images.githubusercontent.com/74334127/167716070-f7164142-add5-4099-ac4c-b1a03027aab6.png)
+
+The first post we can use to find his birthday by a quick google search of “99 days before april 19” giving us their birthday of January 10th.
+
+![780281d7da8fd1e78da0918bc65873ab](https://user-images.githubusercontent.com/74334127/167716380-ef9df5e8-1f32-41fc-ac59-0e9af1005574.png)
+
+The next prompt is “What is the name of your dog?” Looking around more on their facebook, we see an instagram for their dog linked in the Intro section. Something I learned from this challenge is that this can **only be seen if you are logged into Facebook**, so for some OSINT challenges you may need to be logged in. Although for regular OSINT gathering usually you don’t want to alert the person you are looking at, such as on LinkedIn. On the Instagram account we see that the dog’s name is Ravioli.
+
+![6f122865ff944bf3b96112ede45e5c2c](https://user-images.githubusercontent.com/74334127/167716403-a13e50ce-0cc7-40ca-88aa-91f8d353cdc0.png)
+![eefea3f0e97d1ebac12733186ddca7f2](https://user-images.githubusercontent.com/74334127/167716417-e39e1b65-d345-44a1-87b3-035ced79635f.png)
+
+The final prompt is “What are the first six characters of your flag?” which is `sdctf{` for this CTF. This lets us access the flag vault and get the flag.
+
+![986f972701471294de5c5baf8d7e308f](https://user-images.githubusercontent.com/74334127/167716436-39497d60-00e9-42ae-adc9-62f7a1572d07.png)
+
+flag: `sdctf{7he_1m1747i0n_94m3}`
 
