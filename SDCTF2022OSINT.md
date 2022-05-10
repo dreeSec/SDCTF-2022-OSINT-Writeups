@@ -221,7 +221,7 @@ In this commit history we can also see that the blog author’s name `Emanuel Hu
 
 <img src="https://user-images.githubusercontent.com/74334127/167732744-19ae3a38-58fb-42dd-a0c6-6b4c3ab151bc.png" width=60% height=60%>
 
-If we go to the resume that is linked, the email is unfortunately blanked out. However, if we hover over Emanuel Hunt’s profile picture on the right hand side the email ‘mann.sdctf@gmail.com` is shown.
+If we go to the resume that is linked, the email is unfortunately blanked out. However, if we hover over Emanuel Hunt’s profile picture on the right hand side the email `mann.sdctf@gmail.com` is shown.
 
 ![e02da723a567805b5516b019f98764de](https://user-images.githubusercontent.com/74334127/167732758-906a8a69-8caf-41a6-8055-c2e0826f8e27.png)
 
