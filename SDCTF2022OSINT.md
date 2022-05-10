@@ -6,7 +6,7 @@ Team: **WolvSec**
 [**Samuel** [88 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#samuel)  
 [**Turing Test** [49 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#turing-test)  
 [**Paypal Playboy** [23 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#paypal-playboy)  
-[**Mann Hunt** [96 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#google-ransom)  
+[**Mann Hunt** [96 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#mann-hunt)  
 
 ## Part of the ship...
 Difficulty: **Easy**  
