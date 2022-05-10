@@ -186,7 +186,42 @@ Points: **400**
 Solves: **96**
 
 Challenge Description:  
-We were on the trail of a notorious hacker earlier this week, but they suddenly went dark, taking down all of their internet presence...All we have is a username. We need you to track down their personal email address! It will be in the form ****.sdctf@gmail.com. Once you find it, send them an email to demand the flag!
-Username
-mann5549
-By KNOXDEV
+We were on the trail of a notorious hacker earlier this week, but they suddenly went dark, taking down all of their internet presence...All we have is a username. We need you to track down their personal email address! It will be in the form `****.sdctf@gmail.com`. Once you find it, send them an email to demand the flag!   
+**Username**  
+`mann5549`  
+
+### Approach 
+After a quick search for mann5549 we find that they have a Twitter.
+
+![9d9249b72abe7d68a52dbe7ef04faafb](https://user-images.githubusercontent.com/74334127/167732491-33368bac-8dad-4195-b865-006ac118b49f.png)
+
+I tried using the [Wayback Machine](https://archive.org/web/) on this Twitter but could not find anything useful. I went to the website linked on Twitter where we find this message stating that we will never find this user.
+
+![612e1a7d6cc76e155fd90cde8852e340](https://user-images.githubusercontent.com/74334127/167732508-98765603-b5eb-4689-a93b-14b63d1ec52b.png)
+
+Wayback Machine does not prove to be useful here either, so I looked at the source code of the website and found a link to a [GitHub repository](https://github.com/manncyber/manncodes.github.io) for the website.
+
+```
+…name="description" content="Contribute to the blog at https://github.com/manncyber/manncodes.github.io"/><meta data-react-helmet="true" property="og:title"...
+```
+
+In this repository we can see a commit that manncyber made removing certain data because he was being tracked. My first thought was maybe they used their email in this commit, so I added `.patch` to the end of the commit url but they used a standard GitHub email for this. 
+
+![6649251dc98576d5cb2bd9186b901306](https://user-images.githubusercontent.com/74334127/167732691-18f95f12-8f03-40ba-a303-d035df647c85.png)
+
+Here is where I started overthinking the challenge and tried a couple of dead end routes. I saw an image called `salty_egg` was removed in this commit, and when reverse image searvching it I was lead to this [Wikipedia article](https://en.wikipedia.org/wiki/Salted_duck_egg). I spent a long time looking through the editing history profiles and IPs before realizing the image was a [stock template](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/content/blog/hello-world/index.md) for Gatsby. 
+
+In this commit history we can also see that the blog author’s name `Emanuel Hunt` was removed. I initially looked on [epieos](https://epieos.com/) to see if ‘emmanuel.sdctf@gmail.com` or `hunt.sdctf@gmail.com` were valid emails, but they were not. I finally just googled “Emanuel Hunt” (which I should have done initially) and was immediatley shown a search result for an Emanuel Hunt from San Diego on [LinkedIn](https://www.linkedin.com/in/emanuel-hunt-34749a207/).
+
+![7ddc869cacc8710bfcbcb8a03360b7de](https://user-images.githubusercontent.com/74334127/167732744-19ae3a38-58fb-42dd-a0c6-6b4c3ab151bc.png)
+
+If we go to the resume that is linked, the email is unfortunately blanked out. However, if we hover over Emanuel Hunt’s profile picture on the right hand side the email ‘mann.sdctf@gmail.com` is shown.
+
+![e02da723a567805b5516b019f98764de](https://user-images.githubusercontent.com/74334127/167732758-906a8a69-8caf-41a6-8055-c2e0826f8e27.png)
+
+This email is fairly simple to guess and some people may have done that initially. Sending them an email demanding the flag we get this response:
+
+![b3f60f48f531b3ceb6b9bf297b21a006](https://user-images.githubusercontent.com/74334127/167732767-c9833590-f302-4c11-9527-a0317d307439.png)
+
+flag:`sdctf{MaNN_tH@t_w@s_Ann0YinG}`
+
