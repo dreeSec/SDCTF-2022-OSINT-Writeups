@@ -151,13 +151,13 @@ The [mbox](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox)
 The username on Cash App is
  `limosheen`. I first used [Sherlock](https://github.com/sherlock-project/sherlock) to look for accounts connected to that username but couldn’t find anything. I looked back at the email for more information that we could use to find limosheen. 
 
-I decoded the plaintext section of the email with base64 and utf-8, then ran it through Google Translate. 
+I decoded the plaintext section of the email with base64 and utf-8, then ran it through Google Translate:
 
 ``
 Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. You can also find us on PayPal or on the blockchain. 0xbad ... A43B ..... SDCTF {Forgery_bana} 3️⃣ ✳ ✳️ 👟 📙 👈 🔠 🖖 🐾 🃏 🕕 ❇ ❇ ❇️ ⬇ 🈷️ 🕜 ↘️ 🍕 👨 🌏 ◾️ 🌎 😸 🍄 ✳️ 🕡 🚛 👧 🔻 ♓️ 🔠 😭
 ``
 
-This note says we also find them on PayPal. When searching for limosheen on PayPal, we can see that there exists an account with the SDCTF logo. The challenge description said `You should not have to spend any money to solve this challenge`, although some people still sent the account money but received nothing :(. After some research I learned about paypal.me accounts which give more information about a user. Going to [limosheen’s profile](https://www.paypal.com/limosheen), we find this:
+This note says we also find them on PayPal. When searching for limosheen on PayPal, we can see that there exists an account with the SDCTF logo. The challenge description said "You should not have to spend any money to solve this challenge", although some people still sent the account money but received nothing :(. After some research I learned about paypal.me accounts which give more information about a user. Going to [limosheen’s profile](https://www.paypal.com/limosheen), we find this:
 
 <img src="https://user-images.githubusercontent.com/74334127/167728992-09cb6ba1-fef9-4b7d-b5d2-567ef3c771c0.png" width=60% height=60%>
 
