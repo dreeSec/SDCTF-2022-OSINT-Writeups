@@ -84,8 +84,8 @@ flag: `sdctf{32.875,-117.240}`
 ## Turing Test
 Difficulty: **Medium**  
 Authors: `Blarthogg, KNOXDEV`  
-Points: **49**  
-Solves: **200**
+Points: **200**  
+Solves: **49**
 
 Challenge Description:  
 My friend has been locked out of his account! Can you help him recover it?  
