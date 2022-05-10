@@ -120,3 +120,20 @@ The final prompt is “What are the first six characters of your flag?” which 
 
 flag: `sdctf{7he_1m1747i0n_94m3}`
 
+## Paypal Playboy
+Difficulty: **Hard**  
+Authors: `Blarthogg`  
+Points: **300**
+Solves: **23**
+
+Challenge Description:  
+We've apprehended somebody suspected of purchasing SDCTF flags off an underground market. That said, this guy is small fry. We need to find the leaker and bring them to brutal justice!
+
+Attached is an email we retrieved from his inbox. See if you can't figure out the boss of their operation.  
+Flag format is sdctf{...}
+**mbox**
+Click here to download  
+Note
+You should not have to spend any money to solve this challenge
+Note
+If you encounter an email not in the format of [name].sdctf@gmail.com it is not in the challenge scope.
