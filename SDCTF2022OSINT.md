@@ -217,7 +217,7 @@ In this repository we can see a commit that manncyber made removing certain data
 
 Here is where I started overthinking the challenge and tried a couple of dead end routes. I saw an image called `salty_egg` was removed in this commit, and when reverse image searvching it I was lead to this [Wikipedia article](https://en.wikipedia.org/wiki/Salted_duck_egg). I spent a long time looking through the editing history profiles and IPs before realizing the image was a [stock template](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/content/blog/hello-world/index.md) for Gatsby. 
 
-In this commit history we can also see that the blog author’s name `Emanuel Hunt` was removed. I initially looked on [epieos](https://epieos.com/) to see if ‘emmanuel.sdctf@gmail.com` or `hunt.sdctf@gmail.com` were valid emails, but they were not. I finally just googled “Emanuel Hunt” (which I should have done initially) and was immediatley shown a search result for an Emanuel Hunt from San Diego on [LinkedIn](https://www.linkedin.com/in/emanuel-hunt-34749a207/).
+In this commit history we can also see that the blog author’s name `Emanuel Hunt` was removed. I initially looked on [epieos](https://epieos.com/) to see if `emmanuel.sdctf@gmail.com` or `hunt.sdctf@gmail.com` were valid emails, but they were not. I finally just googled “Emanuel Hunt” (which I should have done initially) and was immediatley shown a search result for an Emanuel Hunt from San Diego on [LinkedIn](https://www.linkedin.com/in/emanuel-hunt-34749a207/).
 
 <img src="https://user-images.githubusercontent.com/74334127/167732744-19ae3a38-58fb-42dd-a0c6-6b4c3ab151bc.png" width=60% height=60%>
 
