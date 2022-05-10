@@ -39,14 +39,14 @@ Points: **100**
 Solves: **155**
 
 Challenge Description:  
-Oh no! A hacker has stolen a flag from us and is holding it ransom. Can you help us figure out who created this document? Find their email address and demand they return the flag!
+Oh no! A hacker has stolen a flag from us and is holding it ransom. Can you help us figure out who created this document? Find their email address and demand they return the flag!  
 **Attachments**  
 [ransom letter](https://docs.google.com/document/d/1MbY-aT4WY6jcfTugUEpLTjPQyIL9pnZgX_jP8d8G2Uo/edit)  
 
 ### Approach  
 From the ransom letter, we see a cryptic note about someone threatening to sign their email up for an annoying newsletter. As threatening as this is, it doesn’t give us any information about who made this google doc. However, since it’s google there is likely a way to view the email of this account owner. I went to the “shared with me” section on google drive to get more information about the random letter. Looking at `Details`, we can see that the owner of the document is `Amy SDCTF`. 
 
-![93b795b318ec39dc1b60e22e0e9b1c93](https://user-images.githubusercontent.com/74334127/167705712-72ada725-3691-4980-b6fd-69dbf17ac075.png)
+<img src="https://user-images.githubusercontent.com/74334127/167705712-72ada725-3691-4980-b6fd-69dbf17ac075.png" width=75% height=75%>
 
 I could have used [GHunt](https://github.com/mxrch/GHunt) to get the exact email, but from the Turing Test challenge I assumed the email was in the same format as `jack.sdctf@gmail.com` and confirmed this on [epieos](https://epieos.com/). After sending `amy.sdctf@gmail.com` an email demanding the flag, we get a response giving it to us.
 
@@ -75,9 +75,9 @@ The video linked shows us a blinking beacon at night, with a plane flying by in 
 
 As the competition progressed, I saw that the challenge had a lot of solves and I figured it likely wasn’t some insanely hard Aviation OSINT. I then realized the blinking beacon was likely morse code. `.-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... -` translated to **WHAT HATH GOD WROUGHT**. After googling what that means, we learn it was [the official first Morse code message transmitted in the US](https://en.wikipedia.org/wiki/What_hath_God_wrought#:~:text=%22What%20hath%20God%20wrought%22%20is,the%20Baltimore%E2%80%93Washington%20telegraph%20line).
 
-I thought then the location may be where the message was originally transferred or received, but couldn’t find anything there. I then just searched “What hath god wrought” on Google Maps and found a sculpture at the University of California San Diego. Seeing that the competition is hosted by San Diego State University, I assumed this was the right spot. From this we can get the coordinates on [Google Maps](https://www.google.com/maps/place/What+Hath+God+Wrought/@32.8751745,-117.2408527,21z/data=!4m5!3m4!1s0x80dc07e0d30e81a7:0x69087278617d6b1d!8m2!3d32.8752134!4d-117.2407749) in the url, and truncating 32.8751745,-117.2408527 to get the flag..
+I thought then the location may be where the message was originally transferred or received, but couldn’t find anything there. I then just searched “What hath god wrought” on Google Maps and found a sculpture at the University of California San Diego. Seeing that the competition is hosted by San Diego State University, I assumed this was the right spot. From this we can get the coordinates on [Google Maps](https://www.google.com/maps/place/What+Hath+God+Wrought/@32.8751745,-117.2408527,21z/data=!4m5!3m4!1s0x80dc07e0d30e81a7:0x69087278617d6b1d!8m2!3d32.8752134!4d-117.2407749) in the url, and truncating 32.8751745,-117.2408527 to get the flag.
 
-![79a5590b9250425ef5d4ed03405ba657](https://user-images.githubusercontent.com/74334127/167709182-cbae98ae-76ed-4d13-adad-22767cca5c78.png)
+<img src="https://user-images.githubusercontent.com/74334127/167709182-cbae98ae-76ed-4d13-adad-22767cca5c78.png" width=75% height=75%>
 
 flag: `sdctf{32.875,-117.240}`
 
@@ -99,28 +99,29 @@ Twitter does not need to be used for this challenge.
 ### Approach  
 My first step in this challenge was going to the website, and started spamming random passwords to see what would happen. After 5 incorrect guesses, an `Account Support` window is prompted. We are then asked security questions to get back into our account (as well as bread puns).
 
-![a78305e4a4cdec015b7de26dda34d0db](https://user-images.githubusercontent.com/74334127/167715998-a643e9f5-04c0-4e82-994f-9584db96c296.png)
+<img src="https://user-images.githubusercontent.com/74334127/167715998-a643e9f5-04c0-4e82-994f-9584db96c296.png" width=80% height=80%>
 
 For the first prompt, we are asked our name. We can use [epieos](https://epieos.com/) on Jack’s email to find his name is Jack Banner.
 
-![7c8f47781693d3d5c2decfb0ea295254](https://user-images.githubusercontent.com/74334127/167716017-b7624b46-47e1-47d8-8db4-534ca35f1844.png)
+<img src="https://user-images.githubusercontent.com/74334127/167716017-b7624b46-47e1-47d8-8db4-534ca35f1844.png" width=60% height=60%>
 
 Next we are prompted with “What month were you born in?” I wasn't sure if you were supposed to brute force this but figured since it was an OSINT challenge thre would be a social media account. Epieos showed Jack’s email as being connected to a Twitter, but luckily the challenge admin noticed this as well and added a disclaimer that twitter does not need to be used. What could have happened is someone else registered an account with that email, which admins have to be prepared to fix for these kinds of challenges. I tried other social media platforms, and specifically ones that I did not explore yet. OSINT categories usually try to avoid using the same platform twice. Looking up “Jack Banner” on Facebook, we see [the account](https://www.facebook.com/profile.php?id=100077609021228) we are looking for.
 
-![81adfedda8cb78d2a9b906fe1116eca0](https://user-images.githubusercontent.com/74334127/167716070-f7164142-add5-4099-ac4c-b1a03027aab6.png)
+<img src="https://user-images.githubusercontent.com/74334127/167716070-f7164142-add5-4099-ac4c-b1a03027aab6.png" width=100% height=100%>
 
 The first post we can use to find his birthday by a quick google search of “99 days before april 19” giving us their birthday of January 10th.
 
-![780281d7da8fd1e78da0918bc65873ab](https://user-images.githubusercontent.com/74334127/167716380-ef9df5e8-1f32-41fc-ac59-0e9af1005574.png)
+<img src="https://user-images.githubusercontent.com/74334127/167716380-ef9df5e8-1f32-41fc-ac59-0e9af1005574.png" width=60% height=60%>
 
 The next prompt is “What is the name of your dog?” Looking around more on their facebook, we see an instagram for their dog linked in the Intro section. Something I learned from this challenge is that this can **only be seen if you are logged into Facebook**, so for some OSINT challenges you may need to be logged in. Although for regular OSINT gathering usually you don’t want to alert the person you are looking at, such as on LinkedIn. On the Instagram account we see that the dog’s name is Ravioli.
 
-![6f122865ff944bf3b96112ede45e5c2c](https://user-images.githubusercontent.com/74334127/167716403-a13e50ce-0cc7-40ca-88aa-91f8d353cdc0.png)
-![eefea3f0e97d1ebac12733186ddca7f2](https://user-images.githubusercontent.com/74334127/167716417-e39e1b65-d345-44a1-87b3-035ced79635f.png)
+<img src="https://user-images.githubusercontent.com/74334127/167716403-a13e50ce-0cc7-40ca-88aa-91f8d353cdc0.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/74334127/167716417-e39e1b65-d345-44a1-87b3-035ced79635f.png" width=60% height=60%>
 
 The final prompt is “What are the first six characters of your flag?” which is `sdctf{` for this CTF. This lets us access the flag vault and get the flag.
 
-![986f972701471294de5c5baf8d7e308f](https://user-images.githubusercontent.com/74334127/167716436-39497d60-00e9-42ae-adc9-62f7a1572d07.png)
+<img src="https://user-images.githubusercontent.com/74334127/167716436-39497d60-00e9-42ae-adc9-62f7a1572d07.png" width=80% height=80%>
 
 flag: `sdctf{7he_1m1747i0n_94m3}`
 
@@ -145,7 +146,7 @@ If you encounter an email not in the format of `[name].sdctf@gmail.com` it is no
 ### Approach  
 The [mbox](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox) file contains an email from flag.peddler@wehate.sdc.tf about "cheap sdctf banners". I used [epieos](https://epieos.com/) to see more information about that email, but it doesn't exist. I then wanted to see what `支付.png` (payment.png) was. Using a [base64 to image converter](https://codebeautify.org/base64-to-image-converter), we get a qr code that leads to [this Cash App](https://cash.app/$limosheen?qr=1).
 
-![9372b7ff8c734631c768379168f127df](https://user-images.githubusercontent.com/74334127/167728908-cb3ab535-c339-4fa2-b69c-7e96e33c7127.png)
+<img src="https://user-images.githubusercontent.com/74334127/167728908-cb3ab535-c339-4fa2-b69c-7e96e33c7127.png" width=80% height=80%>
 
 The username on Cash App is
  `limosheen`. I first used [Sherlock](https://github.com/sherlock-project/sherlock) to look for accounts connected to that username but couldn’t find anything. I looked back at the email for more information that we could use to find limosheen. 
@@ -158,7 +159,7 @@ Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast
 
 This note says we also find them on PayPal. When searching for limosheen on PayPal, we can see that there exists an account with the SDCTF logo. The challenge description said `You should not have to spend any money to solve this challenge`, although some people still sent the account money but received nothing :(. After some research I learned about paypal.me accounts which give more information about a user. Going to [limosheen’s profile](https://www.paypal.com/limosheen), we find this:
 
-![f255003612b74769dc7ee74fa8fbdc4a](https://user-images.githubusercontent.com/74334127/167728992-09cb6ba1-fef9-4b7d-b5d2-567ef3c771c0.png)
+<img src="https://user-images.githubusercontent.com/74334127/167728992-09cb6ba1-fef9-4b7d-b5d2-567ef3c771c0.png" width=60% height=60%>
 
 I saw a string on this that started with 0x and incorrectly thought it was a hex string by default, and decoding it gave nothing. I eventually learned it was an Ethereum address by just googling and inputting the address into crypto websites. In hindsight I should have definitely realized this sooner with the plaintext saying we can also find them on the blockchain, and the ropETH comment on the PayPal. When looking up the address on [Etherscan](https://etherscan.io/address/0xBAd914D292CBFEe9d93A6A7a16400Cb53319A43B) we find that the address is valid, but no entries are found.
 
@@ -174,8 +175,9 @@ I tried googling the “ropETH” hint from the PayPal prior but must have done 
 
 The PayPal account said we could find the boss on Twitter, so I put this address into twitter and found the account [Jon Fakeflag](https://twitter.com/wrestling_wave_). 
 
-![65f168dd00e450de1303c1d6cbb30078 (2)](https://user-images.githubusercontent.com/74334127/167729223-8a83c75f-8309-4d77-948b-ce1fc5c255fd.png)
-![5db749f74ce725879d5207652fd6ace5 (2)](https://user-images.githubusercontent.com/74334127/167729232-55339930-fe19-4f43-b5aa-87a14366fe8c.png)
+<img src="https://user-images.githubusercontent.com/74334127/167729223-8a83c75f-8309-4d77-948b-ce1fc5c255fd.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/74334127/167729232-55339930-fe19-4f43-b5aa-87a14366fe8c.png" width=60% height=60%>
 
 From this account we get a base64 string that gives us the flag.
 
@@ -197,11 +199,11 @@ We were on the trail of a notorious hacker earlier this week, but they suddenly 
 ### Approach 
 After a quick search for mann5549 we find that they have a Twitter.
 
-![9d9249b72abe7d68a52dbe7ef04faafb](https://user-images.githubusercontent.com/74334127/167732491-33368bac-8dad-4195-b865-006ac118b49f.png)
+<img src="https://user-images.githubusercontent.com/74334127/167732491-33368bac-8dad-4195-b865-006ac118b49f.png" width=60% height=60%>
 
 I tried using the [Wayback Machine](https://archive.org/web/) on this Twitter but could not find anything useful. I went to the website linked on Twitter where we find this message stating that we will never find this user.
 
-![612e1a7d6cc76e155fd90cde8852e340](https://user-images.githubusercontent.com/74334127/167732508-98765603-b5eb-4689-a93b-14b63d1ec52b.png)
+<img src="https://user-images.githubusercontent.com/74334127/167732508-98765603-b5eb-4689-a93b-14b63d1ec52b.png" width=60% height=60%>
 
 Wayback Machine does not prove to be useful here either, so I looked at the source code of the website and found a link to a [GitHub repository](https://github.com/manncyber/manncodes.github.io) for the website.
 
@@ -217,7 +219,7 @@ Here is where I started overthinking the challenge and tried a couple of dead en
 
 In this commit history we can also see that the blog author’s name `Emanuel Hunt` was removed. I initially looked on [epieos](https://epieos.com/) to see if ‘emmanuel.sdctf@gmail.com` or `hunt.sdctf@gmail.com` were valid emails, but they were not. I finally just googled “Emanuel Hunt” (which I should have done initially) and was immediatley shown a search result for an Emanuel Hunt from San Diego on [LinkedIn](https://www.linkedin.com/in/emanuel-hunt-34749a207/).
 
-![7ddc869cacc8710bfcbcb8a03360b7de](https://user-images.githubusercontent.com/74334127/167732744-19ae3a38-58fb-42dd-a0c6-6b4c3ab151bc.png)
+<img src="https://user-images.githubusercontent.com/74334127/167732744-19ae3a38-58fb-42dd-a0c6-6b4c3ab151bc.png" width=60% height=60%>
 
 If we go to the resume that is linked, the email is unfortunately blanked out. However, if we hover over Emanuel Hunt’s profile picture on the right hand side the email ‘mann.sdctf@gmail.com` is shown.
 
