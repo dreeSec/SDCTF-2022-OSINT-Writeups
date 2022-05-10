@@ -144,7 +144,7 @@ You should not have to spend any money to solve this challenge
 If you encounter an email not in the format of `[name].sdctf@gmail.com` it is not in the challenge scope.
 
 ### Approach  
-The [mbox](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox) file contains an email from flag.peddler@wehate.sdc.tf about "cheap sdctf banners". I used [epieos](https://epieos.com/) to see more information about that email, but it doesn't exist. I then wanted to see what `支付.png` (payment.png) was. Using a [base64 to image converter](https://codebeautify.org/base64-to-image-converter), we get a qr code that leads to [this Cash App](https://cash.app/$limosheen?qr=1).
+The [mbox](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox) file contains an email from `flag.peddler@wehate.sdc.tf` about "cheap sdctf banners". I used [epieos](https://epieos.com/) to see more information about that email, but it doesn't exist. I then wanted to see what `支付.png` (payment.png) was. Using a [base64 to image converter](https://codebeautify.org/base64-to-image-converter), we get a qr code that leads to [this Cash App](https://cash.app/$limosheen?qr=1).
 
 <img src="https://user-images.githubusercontent.com/74334127/167728908-cb3ab535-c339-4fa2-b69c-7e96e33c7127.png" width=80% height=80%>
 
