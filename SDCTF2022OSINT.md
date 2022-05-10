@@ -1,8 +1,12 @@
 # SDCTF 2022 OSINT  
 Team: **WolvSec**  
 
-[**Part of the ship...** [76 solves]](https://github.com/drewd314/Nahamcon-CTF-2022-Keeeber-OSINT-Writeups/blob/main/Keeber.md#keeber-1)   
-[**Google Ransom** [155 solves]](https://github.com/drewd314/Nahamcon-CTF-2022-Keeeber-OSINT-Writeups/blob/main/Keeber.md#keeber-1)  
+[**Part of the ship...** [76 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#part-of-the-ship)  
+[**Google Ransom** [155 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#google-ransom)  
+[**Samuel** [88 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#samuel)  
+[**Turing Test** [49 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#turing-test)  
+[**Paypal Playboy** [23 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#paypal-playboy)  
+[**Mann Hunt** [96 solves]](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/SDCTF2022OSINT.md#google-ransom)  
 
 ## Part of the ship...
 Difficulty: **Easy**  
