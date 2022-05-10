@@ -135,7 +135,7 @@ Challenge Description:
 We've apprehended somebody suspected of purchasing SDCTF flags off an underground market. That said, this guy is small fry. We need to find the leaker and bring them to brutal justice!
 
 Attached is an email we retrieved from his inbox. See if you can't figure out the boss of their operation.  
-Flag format is sdctf{...}
+Flag format is sdctf{...}  
 **mbox**  
 [Click here to download](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox)  
 **Note**  
