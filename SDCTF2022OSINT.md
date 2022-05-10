@@ -128,7 +128,7 @@ flag: `sdctf{7he_1m1747i0n_94m3}`
 ## Paypal Playboy
 Difficulty: **Hard**  
 Authors: `Blarthogg`  
-Points: **300**
+Points: **300**  
 Solves: **23**
 
 Challenge Description:  
