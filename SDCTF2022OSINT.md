@@ -86,7 +86,7 @@ Solves: **200**
 Challenge Description:  
 My friend has been locked out of his account! Can you help him recover it?  
 **Email**  
-jack.sdctf@gmail.com  
+`jack.sdctf@gmail.com`  
 **Website**  
 https://vault.sdc.tf/  
 **Note**  
@@ -131,9 +131,51 @@ We've apprehended somebody suspected of purchasing SDCTF flags off an undergroun
 
 Attached is an email we retrieved from his inbox. See if you can't figure out the boss of their operation.  
 Flag format is sdctf{...}
-**mbox**
-Click here to download  
-Note
-You should not have to spend any money to solve this challenge
-Note
-If you encounter an email not in the format of [name].sdctf@gmail.com it is not in the challenge scope.
+**mbox**  
+[Click here to download](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox)  
+**Note**  
+You should not have to spend any money to solve this challenge  
+**Note**  
+If you encounter an email not in the format of `[name].sdctf@gmail.com` it is not in the challenge scope.
+
+### Approach  
+The [mbox](https://github.com/drewd314/SDCTF-2022-OSINT-Writeups/blob/main/mbox) file contains an email from flag.peddler@wehate.sdc.tf about "cheap sdctf banners". I used [epieos](https://epieos.com/) to see more information about that email, but it doesn't exist. I then wanted to see what `支付.png` (payment.png) was. Using a [base64 to image converter](https://codebeautify.org/base64-to-image-converter), we get a qr code that leads to [this Cash App](https://cash.app/$limosheen?qr=1).
+
+![9372b7ff8c734631c768379168f127df](https://user-images.githubusercontent.com/74334127/167728908-cb3ab535-c339-4fa2-b69c-7e96e33c7127.png)
+
+The username on Cash App is
+ `limosheen`. I first used [Sherlock](https://github.com/sherlock-project/sherlock) to look for accounts connected to that username but couldn’t find anything. I looked back at the email for more information that we could use to find limosheen. 
+
+I decoded the plaintext section of the email with base64 and utf-8, then ran it through Google Translate. 
+
+```
+Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. You can also find us on PayPal or on the blockchain. 0xbad ... A43B ..... SDCTF {Forgery_bana} 3️⃣ ✳ ✳️ 👟 📙 👈 🔠 🖖 🐾 🃏 🕕 ❇ ❇ ❇️ ⬇ 🈷️ 🕜 ↘️ 🍕 👨 🌏 ◾️ 🌎 😸 🍄 ✳️ 🕡 🚛 👧 🔻 ♓️ 🔠 😭
+```
+
+This note says we also find them on PayPal. When searching for limosheen on PayPal, we can see that there exists an account with the SDCTF logo. The challenge description said `You should not have to spend any money to solve this challenge`, although some people still sent the account money but received nothing :(. After some research I learned about paypal.me accounts which give more information about a user. Going to [limosheen’s profile](https://www.paypal.com/limosheen), we find this:
+
+![f255003612b74769dc7ee74fa8fbdc4a](https://user-images.githubusercontent.com/74334127/167728992-09cb6ba1-fef9-4b7d-b5d2-567ef3c771c0.png)
+
+I saw a string on this that started with 0x and incorrectly thought it was a hex string by default, and decoding it gave nothing. I eventually learned it was an Ethereum address by just googling and inputting the address into crypto websites. In hindsight I should have definitely realized this sooner with the plaintext saying we can also find them on the blockchain, and the ropETH comment on the PayPal. When looking up the address on [Etherscan](https://etherscan.io/address/0xBAd914D292CBFEe9d93A6A7a16400Cb53319A43B) we find that the address is valid, but no entries are found.
+
+![7847fbfbadfcbcb3409bab6831d10a3a (1)](https://user-images.githubusercontent.com/74334127/167729093-17115a75-5df2-479f-be90-66f4e8168616.png)
+
+I thought that this was a dead end at first and started doing reverse image searches and forensics on the PayPal banner, but did not get any results. I looked back at the Ethereum address and figured there must be a reason that it’s there. On Etherscan there is a notification saying that the address can be found on other chains, and sure enough we see that it’s on the Ropsten Testnet. 
+
+![2fddeae4e0d29f300f1a948d84267abe](https://user-images.githubusercontent.com/74334127/167729143-b2bbfd4f-ec84-415c-aaba-fa8751a45b3d.png)
+
+I tried googling the “ropETH” hint from the PayPal prior but must have done so poorly since I could not find Ropsten Testnet, but it at least confirmed we were in the right place now. We see Ethereum was transferred to ` 0x949213139D202115c8b878E8Af1F1D8949459f3f`, and this address has only inbound transfers, so it can be assumed that this is the boss we are looking for. 
+
+![15defc90a176464f78d66f18d9d0dd1c](https://user-images.githubusercontent.com/74334127/167729165-d677031c-3a28-4906-ae55-692b258dbf4a.png)
+
+The PayPal account said we could find the boss on Twitter, so I put this address into twitter and found the account [Jon Fakeflag](https://twitter.com/wrestling_wave_). 
+
+![65f168dd00e450de1303c1d6cbb30078 (2)](https://user-images.githubusercontent.com/74334127/167729223-8a83c75f-8309-4d77-948b-ce1fc5c255fd.png)
+![5db749f74ce725879d5207652fd6ace5 (2)](https://user-images.githubusercontent.com/74334127/167729232-55339930-fe19-4f43-b5aa-87a14366fe8c.png)
+
+From this account we get a base64 string that gives us the flag.
+
+![331a62dea9de7fe083ef9c6bf2c85e1f (2)](https://user-images.githubusercontent.com/74334127/167729235-8479e463-4c8b-4695-af33-b2455ced4dd0.png)
+
+flag: `sdctf{You_Ever_Dance_With_the_Devil_In_the_Pale_Moonlight}`
+
