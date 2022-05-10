@@ -153,9 +153,9 @@ The username on Cash App is
 
 I decoded the plaintext section of the email with base64 and utf-8, then ran it through Google Translate. 
 
-```
+``
 Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. Cheap banner for the San Diego Cybersecurity Games. Be the winner of SDCTF. fast and convenient. Click below. You can also find us on PayPal or on the blockchain. 0xbad ... A43B ..... SDCTF {Forgery_bana} 3️⃣ ✳ ✳️ 👟 📙 👈 🔠 🖖 🐾 🃏 🕕 ❇ ❇ ❇️ ⬇ 🈷️ 🕜 ↘️ 🍕 👨 🌏 ◾️ 🌎 😸 🍄 ✳️ 🕡 🚛 👧 🔻 ♓️ 🔠 😭
-```
+``
 
 This note says we also find them on PayPal. When searching for limosheen on PayPal, we can see that there exists an account with the SDCTF logo. The challenge description said `You should not have to spend any money to solve this challenge`, although some people still sent the account money but received nothing :(. After some research I learned about paypal.me accounts which give more information about a user. Going to [limosheen’s profile](https://www.paypal.com/limosheen), we find this:
 
@@ -181,7 +181,7 @@ The PayPal account said we could find the boss on Twitter, so I put this address
 
 From this account we get a base64 string that gives us the flag.
 
-![331a62dea9de7fe083ef9c6bf2c85e1f (2)](https://user-images.githubusercontent.com/74334127/167729235-8479e463-4c8b-4695-af33-b2455ced4dd0.png)
+<img src="https://user-images.githubusercontent.com/74334127/167729235-8479e463-4c8b-4695-af33-b2455ced4dd0.png" width=75% height=75%>
 
 flag: `sdctf{You_Ever_Dance_With_the_Devil_In_the_Pale_Moonlight}`
 
