@@ -11,7 +11,7 @@ Team: **WolvSec**
 ## Part of the ship...
 Difficulty: **Easy**  
 Authors: `Blarthogg`  
-Points: **150**
+Points: **150**  
 Solves: **76**
 
 Challenge Description:  
@@ -35,7 +35,7 @@ flag: `sdctf{morning_noon_and_night_I_meme}`
 ## Google Ransom
 Difficulty: **Easy**  
 Authors: `KNOXDEV`  
-Points: **100**
+Points: **100**  
 Solves: **155**
 
 Challenge Description:  
@@ -57,7 +57,7 @@ flag: `sdctf{0p3n_S0uRCE_1S_aMaz1NG}`
 ## Samuel
 Difficulty: **Medium**  
 Authors: `k3v1n`  
-Points: **88**
+Points: **88**  
 Solves: **160**
 
 Challenge Description:  
@@ -84,7 +84,7 @@ flag: `sdctf{32.875,-117.240}`
 ## Turing Test
 Difficulty: **Medium**  
 Authors: `Blarthogg, KNOXDEV`  
-Points: **49**
+Points: **49**  
 Solves: **200**
 
 Challenge Description:  
@@ -186,7 +186,7 @@ flag: `sdctf{You_Ever_Dance_With_the_Devil_In_the_Pale_Moonlight}`
 ## Mann Hunt
 Difficulty: **Hard**  
 Authors: `KNOXDEV`  
-Points: **400**
+Points: **400**  
 Solves: **96**
 
 Challenge Description:  
